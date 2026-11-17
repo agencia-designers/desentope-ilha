@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desentope Ilha — Desentupidora 24h em Florianópolis | Ingleses</title>
+  <meta name="description" content="Desentupidora 24h nos Ingleses e Florianópolis. Ralo, vaso, caixa de gordura e hidrojato. Atendimento rápido, sem sujeira. Orçamento pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coal: '#14171a',
+            steel: '#1f2429',
+            graphite: '#2c333a',
+            smoke: '#e8eaed',
+            fog: '#f0f2f5',
+            amber: { brand: '#f59e0b', hot: '#ea580c', glow: '#fbbf24' }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+            sans: ['Sora', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            ember: '0 0 40px rgba(245,158,11,.28)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Sora, system-ui, sans-serif; }
+    .font-display { font-family: "Barlow Condensed", system-ui, sans-serif; }
+    .glass {
+      background: rgba(20, 23, 26, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-bg {
+      background:
+        linear-gradient(115deg, rgba(20,23,26,.92) 0%, rgba(31,36,41,.55) 42%, rgba(20,23,26,.88) 100%),
+        url('images/hero.jpg') center/cover no-repeat;
+    }
+    .mesh {
+      background:
+        radial-gradient(ellipse 75% 55% at 15% 15%, rgba(245,158,11,.12), transparent 50%),
+        radial-gradient(ellipse 50% 40% at 90% 80%, rgba(234,88,12,.08), transparent 45%),
+        linear-gradient(180deg, #f0f2f5 0%, #e8eaed 48%, #f0f2f5 100%);
+    }
+    .service-card {
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(20,23,26,.14);
+      border-color: rgba(245,158,11,.5);
+    }
+    .gallery-item img {
+      transition: transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .float-wa {
+      animation: bob 3.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .pulse-dot {
+      box-shadow: 0 0 0 0 rgba(245,158,11,.55);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 10px rgba(245,158,11,0); }
+      100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+    }
+    #lightbox { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    #lightbox.open { opacity: 1; pointer-events: auto; }
+    .estimator-option.selected {
+      border-color: #f59e0b;
+      background: rgba(245,158,11,.1);
+      box-shadow: 0 0 0 1px #f59e0b;
+    }
+    .stripe-hazard {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(245,158,11,.15),
+        rgba(245,158,11,.15) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+    }
+  </style>
+</head>
+<body class="bg-fog text-coal antialiased">
+
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="glass border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 h-[4.25rem] flex items-center justify-between gap-2 sm:gap-3">
+        <a href="#topo" class="font-display font-bold text-xl tracking-wide text-white uppercase">
+          Desentope <span class="text-amber-brand">Ilha</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm text-white/80">
+          <a href="#servicos" class="hover:text-amber-glow transition">Serviços</a>
+          <a href="#galeria" class="hover:text-amber-glow transition">Galeria</a>
+          <a href="#confianca" class="hover:text-amber-glow transition">Por que nós</a>
+          <a href="#orcamento" class="hover:text-amber-glow transition">Orçamento</a>
+          <a href="#contato" class="hover:text-amber-glow transition">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <span class="hidden lg:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-white/95 shrink-0">
+            <span class="h-2 w-2 rounded-full bg-amber-brand pulse-dot"></span>
+            Agenda Aberta para Esta Semana
+          </span>
+          <a href="https://wa.me/5548991883344?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20da%20Desentope%20Ilha"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-full bg-amber-brand px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-bold text-coal hover:bg-amber-glow transition shadow-ember leading-tight text-center">
+            <span class="hidden sm:inline">Falar com Especialista no WhatsApp</span>
+            <span class="sm:hidden">WhatsApp</span>
+          </a>
+          <button id="menuBtn" class="md:hidden text-white p-2 shrink-0" aria-label="Abrir menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-4 pb-4">
+        <div class="flex flex-col gap-3 pt-3 text-sm text-white/85">
+          <a href="#servicos" class="py-1">Serviços</a>
+          <a href="#galeria" class="py-1">Galeria</a>
+          <a href="#confianca" class="py-1">Por que nós</a>
+          <a href="#orcamento" class="py-1">Orçamento</a>
+          <a href="#contato" class="py-1">Contato</a>
+          <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-amber-glow pt-1">
+            <span class="h-2 w-2 rounded-full bg-amber-brand"></span> Agenda Aberta para Esta Semana
+          </span>
+          <a href="https://wa.me/5548991883344?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20da%20Desentope%20Ilha"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-full bg-amber-brand px-4 py-2.5 text-xs font-bold text-coal">
+            Falar com Especialista no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero-bg relative min-h-[100svh] flex items-end sm:items-center stripe-hazard">
+      <div class="absolute inset-0 bg-gradient-to-t from-coal via-transparent to-coal/50"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 w-full pt-28 pb-16 sm:py-32">
+        <p class="font-display text-amber-brand text-base sm:text-lg font-bold tracking-[0.22em] uppercase mb-4 reveal">Desentope Ilha</p>
+        <h1 class="font-display text-white font-extrabold text-[clamp(2.5rem,7.5vw,5rem)] leading-[0.92] tracking-tight max-w-[12ch] mb-5 reveal" style="transition-delay:.08s">
+          Entupiu? A gente desentope agora
+        </h1>
+        <p class="text-white/82 text-base sm:text-lg max-w-lg mb-8 reveal" style="transition-delay:.16s">
+          Desentupidora 24h nos Ingleses e Florianópolis — ralo, vaso, caixa de gordura e hidrojato. <strong class="text-amber-glow font-semibold">Sem sujeira e sem enrolação.</strong>
+        </p>
+        <div class="flex flex-wrap gap-3 reveal" style="transition-delay:.24s">
+          <a href="https://wa.me/5548991883344?text=Ol%C3%A1%2C%20preciso%20de%20desentupidora%20urgente%20nos%20Ingleses"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full bg-amber-brand px-6 py-3.5 text-sm font-bold text-coal hover:bg-amber-glow transition shadow-ember">
+            Chamar no WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="#orcamento"
+             class="inline-flex items-center rounded-full border border-white/35 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/12 transition">
+            Estimar valor agora
+          </a>
+        </div>
+        <p class="mt-6 text-white/50 text-xs sm:text-sm reveal" style="transition-delay:.32s">Emergência 24h · Comercial Seg–Sáb 07:00–19:00</p>
+      </div>
+    </section>
+
+    <section id="servicos" class="mesh py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-12 reveal">
+          <p class="text-amber-hot font-bold text-sm tracking-widest uppercase mb-2">Serviços</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-coal uppercase">Solução para cada entupimento</h2>
+          <p class="mt-3 text-graphite/75">Equipamento profissional, proteção do ambiente e descarte correto — residências, condomínios e comércio na região norte da ilha.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Ralo e pia</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Remoção de resíduos, cabelo e gordura com cabo espiral e aspiração — banheiro, cozinha e área de serviço.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Vaso sanitário</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Desobstrução sem quebrar louça, quando possível, com ferramentas específicas e teste de vazão após o serviço.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Caixa de gordura</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Limpeza completa, sucção e higienização para evitar retorno de mau cheiro e entupimento na rede.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Hidrojato</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Alta pressão para tubulações, redes de esgoto e colunas — remove incrustação sem agredir o encanamento.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Condomínios</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Colunas, caixas coletivas e redes compartilhadas com agendamento e relatório do que foi executado.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-graphite/15 bg-white/90 p-6 sm:p-7" style="transition-delay:.24s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-steel text-amber-brand flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2 uppercase tracking-wide">Emergência 24h</h3>
+            <p class="text-graphite/65 text-sm leading-relaxed">Overflow, retorno de esgoto ou entupimento fora do horário comercial — plantão para Florianópolis e Ingleses.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="bg-coal py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 reveal">
+          <div>
+            <p class="text-amber-brand font-bold text-sm tracking-widest uppercase mb-2">Galeria</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">Equipe e equipamento no campo</h2>
+          </div>
+          <p class="text-white/55 text-sm max-w-xs">Clique para ampliar. Registros ilustrativos do padrão Desentope Ilha.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-square md:row-span-2 md:aspect-auto md:h-full" data-full="images/gallery-1.jpg">
+            <img src="images/gallery-1.jpg" alt="Ferramentas e chaves de encanador para desentupimento" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/75 via-transparent to-transparent opacity-90"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Kit profissional</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-2.jpg">
+            <img src="images/gallery-2.jpg" alt="Encanador trabalhando em tubulação" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Serviço em tubulação</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-3.jpg">
+            <img src="images/gallery-3.jpg" alt="Manutenção de encanamento e canos" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Manutenção hidráulica</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-4.jpg">
+            <img src="images/gallery-4.jpg" alt="Técnico com equipamento de desentupimento" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Atendimento em campo</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-5.jpg">
+            <img src="images/gallery-5.jpg" alt="Canos e conexões de encanamento" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Rede e conexões</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-[16/10] md:col-span-2" style="transition-delay:.18s" data-full="images/hero.jpg">
+            <img src="images/hero.jpg" alt="Profissional de desentupidora em serviço" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-coal/70 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Desentupidora 24h</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="confianca" class="py-20 sm:py-28 bg-fog">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <p class="text-amber-hot font-bold text-sm tracking-widest uppercase mb-2">Por que a Desentope Ilha</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-5 uppercase">Rapidez com método e respeito ao seu espaço</h2>
+            <p class="text-graphite/75 mb-8 max-w-md">Entupimento não espera. A gente chega com diagnóstico claro, proteção das áreas e explicação do que foi feito — sem empurrar serviço que você não precisa.</p>
+            <div class="space-y-5">
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-smoke flex items-center justify-center text-amber-hot font-display font-bold text-lg">01</div>
+                <div>
+                  <h3 class="font-bold text-coal">Chegada rápida nos Ingleses</h3>
+                  <p class="text-sm text-graphite/65 mt-1">Base na região norte da ilha — deslocamento enxuto para Ingleses, Santinho, Cachoeira do Bom Jesus e entorno.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-smoke flex items-center justify-center text-amber-hot font-display font-bold text-lg">02</div>
+                <div>
+                  <h3 class="font-bold text-coal">Sem bagunça na sua casa</h3>
+                  <p class="text-sm text-graphite/65 mt-1">Lonas, organização do material e limpeza básica após o serviço — foco em resolver sem transformar o banheiro em canteiro.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-smoke flex items-center justify-center text-amber-hot font-display font-bold text-lg">03</div>
+                <div>
+                  <h3 class="font-bold text-coal">Preço combinado antes</h3>
+                  <p class="text-sm text-graphite/65 mt-1">Orçamento pelo WhatsApp com tipo de serviço e urgência — você sabe a faixa antes do técnico sair.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal relative" style="transition-delay:.12s">
+            <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-amber-brand/25 via-transparent to-amber-hot/20 blur-2xl"></div>
+            <img src="images/trust.jpg"
+                 alt="Encanador realizando reparo em tubulação"
+                 class="relative rounded-[1.5rem] w-full h-[420px] object-cover shadow-2xl border border-graphite/20" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orcamento" class="py-20 sm:py-28 bg-steel text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-35 pointer-events-none stripe-hazard"></div>
+      <div class="absolute inset-0 opacity-40 pointer-events-none"
+           style="background: radial-gradient(circle at 85% 15%, rgba(245,158,11,.4), transparent 42%), radial-gradient(circle at 5% 85%, rgba(234,88,12,.22), transparent 38%);"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-10 reveal">
+          <p class="text-amber-glow font-bold text-sm tracking-widest uppercase mb-2">Estimativa rápida</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight uppercase">Quanto custa o seu desentupimento?</h2>
+          <p class="mt-3 text-white/65">Escolha o tipo de serviço e o nível de urgência. Em segundos você vê uma faixa de valor e pode confirmar no WhatsApp.</p>
+        </div>
+
+        <div class="reveal grid lg:grid-cols-[1.2fr_.8fr] gap-6 lg:gap-8">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+            <p class="text-sm font-semibold text-white/80 mb-3">Tipo de serviço</p>
+            <div class="grid sm:grid-cols-2 gap-3 mb-8" id="tipoGroup">
+              <button type="button" data-tipo="ralo" data-base="140" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Ralo / pia
+              </button>
+              <button type="button" data-tipo="vaso" data-base="175" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Vaso sanitário
+              </button>
+              <button type="button" data-tipo="gordura" data-base="290" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Caixa de gordura
+              </button>
+              <button type="button" data-tipo="hidrojato" data-base="380" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Hidrojato
+              </button>
+            </div>
+
+            <p class="text-sm font-semibold text-white/80 mb-3">Urgência</p>
+            <div class="grid sm:grid-cols-2 gap-3" id="urgGroup">
+              <button type="button" data-urg="comercial" data-mult="1" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Agendado (comercial)
+              </button>
+              <button type="button" data-urg="emergencia" data-mult="1.5" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber-brand/50 transition">
+                Emergência 24h
+              </button>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-amber-brand text-coal p-6 sm:p-8 flex flex-col justify-between shadow-ember">
+            <div>
+              <p class="text-sm font-semibold opacity-70 mb-1">Estimativa a partir de</p>
+              <p id="precoEstimado" class="font-display text-5xl font-extrabold tracking-tight">R$ 140</p>
+              <p class="mt-3 text-sm opacity-80 leading-relaxed">Valor aproximado para Ingleses e Florianópolis. Casos complexos (coluna, múltiplos pontos) podem variar — confirme no WhatsApp.</p>
+            </div>
+            <a id="waOrcamento"
+               href="https://wa.me/5548991883344?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Desentope%20Ilha%20e%20quero%20um%20or%C3%A7amento"
+               target="_blank" rel="noopener"
+               class="mt-8 inline-flex items-center justify-center rounded-full bg-coal px-6 py-3.5 text-sm font-bold text-white hover:bg-graphite transition">
+              Confirmar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 sm:py-28 mesh">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div class="reveal">
+            <p class="text-amber-hot font-bold text-sm tracking-widest uppercase mb-2">Contato</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 uppercase">Entupiu? Manda mensagem agora</h2>
+            <p class="text-graphite/75 max-w-md mb-8">Atendemos Ingleses, Santinho e toda Florianópolis. Plantão 24h para emergências.</p>
+            <a href="tel:+5548991883344" class="inline-flex items-center gap-2 font-display text-2xl font-bold text-coal hover:text-amber-hot transition tracking-wide">
+              (48) 99188-3344
+            </a>
+          </div>
+
+          <div class="reveal rounded-3xl border border-graphite/15 bg-white/95 p-6 sm:p-8 shadow-lg shadow-coal/5" style="transition-delay:.1s">
+            <dl class="space-y-5 text-sm">
+              <div>
+                <dt class="font-semibold text-graphite/50 uppercase tracking-wider text-[11px] mb-1">Endereço</dt>
+                <dd class="text-coal font-medium">Rua Intendente João Nunes Vieira, 890 — Ingleses<br />Florianópolis — SC, 88058-100</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-graphite/50 uppercase tracking-wider text-[11px] mb-1">Horário</dt>
+                <dd class="text-coal font-medium">Emergência: 24 horas<br />Comercial: Seg–Sáb 07:00 – 19:00</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-graphite/50 uppercase tracking-wider text-[11px] mb-1">WhatsApp</dt>
+                <dd>
+                  <a href="https://wa.me/5548991883344" target="_blank" rel="noopener" class="text-amber-hot font-bold hover:underline">(48) 99188-3344</a>
+                </dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-graphite/50 uppercase tracking-wider text-[11px] mb-1">Área de atuação</dt>
+                <dd class="text-coal font-medium">Ingleses · Região norte da ilha · Grande Florianópolis</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-coal text-white/50 py-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
+      <p class="font-display font-bold text-white text-lg uppercase tracking-wide">Desentope <span class="text-amber-brand">Ilha</span> <span class="font-sans font-normal text-white/40 ml-2 text-sm normal-case">Desentupidora 24h</span></p>
+      <p>© <span id="year"></span> Desentope Ilha · Florianópolis/SC · Demo para pitch comercial</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5548991883344?text=Ol%C3%A1%2C%20preciso%20da%20Desentope%20Ilha"
+     target="_blank" rel="noopener"
+     class="float-wa fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl hover:scale-105 transition"
+     aria-label="WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div id="lightbox" class="fixed inset-0 z-[60] bg-coal/92 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl leading-none" aria-label="Fechar">&times;</button>
+    <img id="lightboxImg" src="" alt="Ampliação da galeria" class="max-h-[88vh] max-w-full rounded-xl object-contain shadow-2xl" />
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.hero-bg .reveal').forEach(el => el.classList.add('in'));
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.gallery-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.full;
+        lightbox.classList.add('open');
+      });
+    });
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+    let base = 140, mult = 1;
+    const precoEl = document.getElementById('precoEstimado');
+    const waOrc = document.getElementById('waOrcamento');
+
+    const tipoLabels = {
+      ralo: 'Ralo / pia',
+      vaso: 'Vaso sanitário',
+      gordura: 'Caixa de gordura',
+      hidrojato: 'Hidrojato'
+    };
+
+    function formatBRL(n) {
+      return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    }
+
+    function updateEstimate() {
+      const total = Math.round(base * mult);
+      precoEl.textContent = formatBRL(total);
+      const tipo = document.querySelector('#tipoGroup .selected')?.dataset.tipo || 'ralo';
+      const urg = document.querySelector('#urgGroup .selected')?.dataset.urg || 'comercial';
+      const urgLabel = urg === 'emergencia' ? 'Emergência 24h' : 'Agendado (comercial)';
+      const msg = encodeURIComponent(
+        `Olá, vim pelo site da Desentope Ilha. Quero orçamento: ${tipoLabels[tipo] || tipo}, urgência: ${urgLabel}. Estimativa do site: ${formatBRL(total)}.`
+      );
+      waOrc.href = `https://wa.me/5548991883344?text=${msg}`;
+    }
+
+    function bindGroup(groupId, onPick) {
+      const group = document.getElementById(groupId);
+      group.querySelectorAll('.estimator-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.estimator-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          onPick(btn);
+          updateEstimate();
+        });
+      });
+    }
+
+    bindGroup('tipoGroup', (btn) => { base = Number(btn.dataset.base); });
+    bindGroup('urgGroup', (btn) => { mult = Number(btn.dataset.mult); });
+    updateEstimate();
+  </script>
+</body>
+</html>
